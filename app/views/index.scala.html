@@ -1,0 +1,266 @@
+@(url: String, xmrDonationAddress: String, btcDonationAddress: String, timeJitter: Int)
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='stylesheet' href='@routes.Assets.at("lib/bootstrap/css/bootstrap.css")'>
+    <link rel='stylesheet' href='@routes.Assets.at("lib/bootstrap/css/bootstrap-theme.css")'>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link href="@routes.Assets.at("images/favicon.ico")" rel="icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+
+    <meta name="description" content="Monero sound - listen to the monero network.">
+    <meta name="keywords" content="monero, xmr, sound, blockchain, music">
+
+    <meta property="og:title" content="Monero sound"/>
+    <meta property="og:description" content="Monero sound - listen to the monero network">
+    <meta property="og:image" content="http://monerosound.info/assets/images/notes-part.jpg">
+    <meta property="og:site_name" content="monerosound.info, Monero sound">
+    <meta property="og:url" content="http://monerosound.info/">
+    <meta property="og:type" content="website">
+
+    <title>Monero sound</title>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="container-fluid text-center">
+	<div class="row top30">
+	  <div class="col-md-5 col-md-offset-4">
+	    <img class="logo" src="@routes.Assets.at("images/monero-logo.svg")"></img>
+	  </div>
+	</div>
+
+	<div id="content">
+	  <div id="intro">
+
+	    <div class="row top30">
+	      <div class="col-md-5 col-md-offset-4">
+		<p class="shake-block"><strong> This is the sound of the monero network.</strong></p>
+	      </div>
+	    </div>
+	    <div class="row top30">
+	      <div class="col-md-5 col-md-offset-4">
+		<p>
+		Whenever somebody makes a transaction you will hear one of the drums<br>
+		(<span id="transaction-notes" class="notes">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		</span>).
+		</p>
+		<p>
+		When a block is found you will hear the ride cymbal
+		(<span id="block-notes" class="notes">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		</span>).
+		</p>
+	      </div>
+	    </div>
+	    <div class="row top30">
+	      <div class="col-md-7 col-md-offset-3">
+		<p>
+
+		  @if(xmrDonationAddress) {
+		    Monero network is still a bit quiet and<br>
+		    <del>the server</del> beer costs <del>money</del> monero<br>
+		    so hit the drum by donating:<br>
+		    <span class="small coin-address" id="donation-address">@xmrDonationAddress</span>
+		  }
+
+		  @if(xmrDonationAddress && btcDonationAddress) { <br>or }
+
+		  @if(btcDonationAddress) {
+		    donate bitcoin:<br>
+		    <span class="small coin-address" id="donation-address">@btcDonationAddress</span>
+		  }
+
+		</p>
+	      </div>
+	    </div>
+	    <div class="row top30">
+	      <div class="col-md-7 col-md-offset-3">
+		<p><a class="toggle-content">about & credits</a></p>
+		<p><a href="https://riot.im/app/#/room/#monerosound:matrix.org" target="_blank">contact</a></p>
+	      </div>
+	    </div>
+
+	  </div>
+
+	  <div id="about" style="display: none;">
+
+	    <div class="row top30">
+	      <div class="col-md-5 col-md-offset-4">
+		<p><strong>About & credits</strong></p>
+		<p>
+		Monero is a secure, private, untraceable currency.<br>
+		It is open-source and freely available to all.<br>
+		Read more <a class="black" href="https://getmonero.org/home" target="_blank">here</a>.
+		</p>
+		<p>
+		Monero sound was inspired by:<br>
+		<a href="http://www.blockear.com/#">blockrear</a><br>
+		<a href="https://github.com/MaxLaumeister/bitlisten">bitlisten</a><br>
+		<a href="http://listen.hatnote.com/#en">listen to wikipedia</a><br>
+		</p>
+		<p>
+		All sounds
+		(<a class="black" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC</a>)
+		by ZappaMidiPF <br>
+		  <span>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Tom_Agudo.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Tom_Grave.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Tom_Medio.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Bombo_Ac%C3%BAstico.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Bombo_Leg%C3%BCero_Agudo.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Bombo_Leg%C3%BCero_Grave.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Bongo_Agudo.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Bongo_Grave.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  <a class="black" target="_blank" href="https://commons.wikimedia.org/wiki/File:Ride.ogg">
+		  <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+		  </a>
+		  </span>
+		</p>
+		<p>Background image (<a class="black" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC</a>)
+		by <a class="black" href="https://www.flickr.com/photos/ladyro/6095072806/in/photolist-ahAQNb-6gVx4q-dxJExC-3ng3j6-bRQsu-7usvtd-48yksH-f1He9f-dWXVmD-qmFUMg-HRf8H7-47JPXN-qqeDek-8ZKokC-q2LbM5-gyabkA-cDgtpw-57piRE-f3UxGz-5vA7CN-2qafya-pNmm8u-rYEJGu-9rDUDb-dR1K2T-qhGecS-27RBCn-QBGN5m-5dqNRQ-hJtZpi-SdFQn-nTEwfd-8WNXMc-nR6bfB-qmPSaU-ptkE3T-qzvN6i-wioPG-mKquo-mKqFF-6feTT2-dWGT32-fP52HK-6SeiTr-qhpC13-b7uXx6-76ogiY-53ZKEj-t8eZC-6RVSNC" target="_blank">Lady Ro</a>.</p>
+
+		<p class="top10"><a href="https://riot.im/app/#/room/#monerosound:matrix.org" target="_blank">contact</a></p>
+		<p><a class="toggle-content">back</a></p>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+      </div>
+    </div>
+
+
+        <script type='text/javascript' src='@routes.Assets.at("lib/jquery/jquery.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.at("lib/flot/jquery.flot.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.at("js/jquery-ui.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.at("js/howler.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.at("js/lodash.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.at("js/reconnecting-websocket.min.js")'></script>
+
+        <script language="javascript">
+		var jitter = @timeJitter;
+
+                var $blocks = $("#blocks"),
+                        $transactionNotes = $("#transaction-notes"),
+                        $blockNotes = $("#block-notes"),
+			$shakeBlock = $(".shake-block");
+
+		function makeHowl(srcPath) { return new Howl({ src: srcPath }); }
+
+		var blockPaths = ["@routes.Assets.at("sounds/Ride.ogg")"];
+
+		var transactionPaths = [
+		  "@routes.Assets.at("sounds/Bombo_Acústico.ogg")",
+		  "@routes.Assets.at("sounds/Bombo_Legüero_Agudo.ogg")",
+		  "@routes.Assets.at("sounds/Bombo_Legüero_Grave.ogg")",
+		  "@routes.Assets.at("sounds/Bongo_Agudo.ogg")",
+		  "@routes.Assets.at("sounds/Bongo_Grave.ogg")",
+		  "@routes.Assets.at("sounds/Tom_Agudo.ogg")",
+		  "@routes.Assets.at("sounds/Tom_Grave.ogg")",
+		  "@routes.Assets.at("sounds/Tom_Medio.ogg")"
+		];
+
+		// get sounds and create real notes
+
+		var soundBlock = _.map(blockPaths, makeHowl)
+
+		$blockNotes.empty();
+
+		_.forEach(soundBlock, function (howl) { 
+		  var note = $('<span class="glyphicon glyphicon-music" aria-hidden="true"></span>');
+		  note.click(function () { howl.play(); });
+		  $blockNotes.append(note);
+		});
+
+		var soundTransaction = _.map(transactionPaths, makeHowl)
+
+		$transactionNotes.empty();
+		
+		_.forEach(soundTransaction, function (howl) { 
+		  var note = $('<span class="glyphicon glyphicon-music" aria-hidden="true"></span>');
+		  note.click(function () { howl.play(); });
+		  $transactionNotes.append(note);
+		});
+
+		function toggleContent() {
+		  if ($('#intro').css('display')!='none') {
+		    history.pushState(null, null, '/about/');
+		    $('#about').show().siblings('div').hide();
+		  } else if ($('#about').css('display')!='none'){
+		    history.pushState(null, null, '/main/');
+		    $('#intro').show().siblings('div').hide();
+		  }
+		}
+
+		function getRandomInt(min, max) {
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+
+		$('.toggle-content').on('click', toggleContent);
+		window.addEventListener("popstate", toggleContent)
+
+		var currentBlock = 0;
+
+		function blockFoundEffect() {
+		    _.sample(soundBlock).play();
+		    $shakeBlock.effect('shake', { direction: 'up', distance: 5 }, 1000);
+		}
+
+		function transactionEffect() { _.sample(soundTransaction).play(); }
+
+		blockFoundEffect();
+
+		var connection = new ReconnectingWebSocket("@url");
+
+                connection.onopen = function () {};
+
+                connection.onerror = function (error) {
+                    console.log('WebSocket Error ', error);
+                };
+
+                connection.onmessage = function (event) {
+		    var jsonData = JSON.parse(event.data);
+
+		    if (jsonData.action == "chain_update" && jsonData.data.height > currentBlock) {
+		      currentBlock = jsonData.data.height;
+		      var delay = getRandomInt(0, jitter);
+		      setTimeout(blockFoundEffect, delay);
+		    } else if (jsonData.action == "new_transaction") { 
+		      var delay = getRandomInt(0, jitter);
+		      setTimeout(transactionEffect, delay);
+		    }
+                };
+        </script>
+    </body>
+</html>
