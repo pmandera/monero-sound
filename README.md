@@ -9,6 +9,12 @@ To see it in action go to [http://monerosound.info/](http://monerosound.info/).
 It is written in Scala using the [Play
 Framework](https://www.playframework.com/).
 
+### Tips
+
+You can tip me at:
+
+XMR: 494QjYxqKshbG4YjsAEYfE4d5YaCvgqHp2DQfPtLT8wajjBwFcsbVo1eCa461i5ukGSKwdUcATmx241iQ6h7THdF2v9oJNn
+
 Usage
 -----
 
